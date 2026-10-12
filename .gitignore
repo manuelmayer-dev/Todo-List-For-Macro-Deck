@@ -155,3 +155,6 @@ $RECYCLE.BIN/
 testresults.trx
 TestResults
 publish
+
+# Build output of macrodeck-plugin build and local store screenshots
+/artifacts/
