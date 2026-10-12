@@ -195,32 +195,46 @@ internal static class TodoWidgetView
 		Gap = UiSize.FromBasis(0.03),
 		Children =
 		[
-			new UiTextRun
+			new UiStack
 			{
-				Key = "count",
-				Text = UiText.From(() => state.Status.Value == TodoStoreStatus.Ready ? Counts(state).Open.ToString(CultureInfo.InvariantCulture) : "-"),
-				Size = UiSize.FromBasis(height * 0.75),
-				Weight = UiComponentTextWeights.Bold,
-				Role = UiComponentTextRoles.Primary,
-				MaxLines = 1,
-			},
-			new UiTextRun
-			{
-				Key = "title",
+				Key = "lead",
 				Fill = true,
-				Text = UiText.Optional(() => Caption(state)),
-				Size = UiSize.FromBasis(height * 0.42),
-				MinSize = UiSize.FromBasis(height * 0.3),
-				Weight = UiComponentTextWeights.SemiBold,
-				Color = UiValue.Optional(() => state.Status.Value == TodoStoreStatus.Ready && Counts(state).Overdue > 0
-					? UiValue.Of(TodoLabels.OverdueColor)
-					: UiValue.None<string>()),
-				Role = UiComponentTextRoles.Secondary,
-				MaxLines = 1,
+				Direction = UiComponentDirections.Horizontal,
+				Align = UiComponentAlignments.Center,
+				Gap = UiSize.FromBasis(0.03),
+				Children =
+				[
+					new UiTextRun
+					{
+						Key = "count",
+						Text = UiText.From(() => HeaderCount(state)),
+						Digits = UiValue.From(() => (double)HeaderCount(state).Length),
+						Size = UiSize.FromBasis(height * 0.75),
+						Weight = UiComponentTextWeights.Bold,
+						Role = UiComponentTextRoles.Primary,
+						MaxLines = 1,
+					},
+					new UiTextRun
+					{
+						Key = "title",
+						Text = UiText.Optional(() => Caption(state)),
+						Size = UiSize.FromBasis(height * 0.42),
+						MinSize = UiSize.FromBasis(height * 0.3),
+						Weight = UiComponentTextWeights.SemiBold,
+						Color = UiValue.Optional(() => state.Status.Value == TodoStoreStatus.Ready && Counts(state).Overdue > 0
+							? UiValue.Of(TodoLabels.OverdueColor)
+							: UiValue.None<string>()),
+						Role = UiComponentTextRoles.Secondary,
+						MaxLines = 1,
+					},
+				],
 			},
 			.. pageButton is null ? Array.Empty<UiElement>() : [pageButton],
 		],
 	};
+
+	private static string HeaderCount(TodoUiState state) =>
+		state.Status.Value == TodoStoreStatus.Ready ? Counts(state).Open.ToString(CultureInfo.InvariantCulture) : "-";
 
 	private static UiStack Body(
 		TodoUiState state,

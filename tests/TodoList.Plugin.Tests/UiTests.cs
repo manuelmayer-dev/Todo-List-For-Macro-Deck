@@ -102,6 +102,22 @@ public sealed class UiTests
 	}
 
 	[Test]
+	public void No_text_in_a_layout_row_sits_beside_a_filling_sibling_without_its_own_slot()
+	{
+		var root = (UiResponsive)TodoWidgetView.Build(TodoSamples.State(), TodoWidgetSettings.Default, new NoCommands());
+		var rows = root.Variants.Select(v => v.Content).Prepend(root.Default).SelectMany(Descendants).OfType<UiStack>()
+			.Where(stack => stack.Direction == UiComponentDirections.Horizontal)
+			.ToList();
+
+		Assert.That(rows, Is.Not.Empty);
+		foreach (var row in rows.Where(row => row.Children.Any(Fills)))
+		{
+			var unslotted = row.Children.OfType<UiTextRun>().Where(text => text.Fill != true && text.MainSize == default);
+			Assert.That(unslotted.Select(text => text.Key), Is.Empty, $"row '{row.Key}'");
+		}
+	}
+
+	[Test]
 	public void Widget_settings_read_saved_values_and_clamp_invalid_ones()
 	{
 		var data = JsonDocument.Parse("""{"maxVisible":99,"sort":"manual","showCompleted":true,"statusFilter":"overdue","density":"compact","interactive":false,"unknown":1}""").RootElement;
@@ -178,6 +194,20 @@ public sealed class UiTests
 			yield return child;
 		}
 	}
+
+	private static IEnumerable<UiElement> Descendants(UiElement element) => element switch
+	{
+		UiContainer container => container.Children.SelectMany(Descendants).Prepend(element),
+		UiWhen conditional => Descendants(conditional.Content()).Prepend(element),
+		_ => [element],
+	};
+
+	private static bool Fills(UiElement element) => element switch
+	{
+		UiComponentContainer container => container.Fill == true,
+		UiComponentLeaf leaf => leaf.Fill == true,
+		_ => false,
+	};
 
 	private sealed class NoCommands : ITodoCommands
 	{

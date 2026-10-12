@@ -383,6 +383,9 @@ match.
   rows are short and local. Any control in a widget layout stops the tile's tap from opening the modal
   on older readers; keep the 1x1 and medium layouts free of controls and keep the large layout's first
   control harmless (the page button), as `UiTests` checks.
+- A text in a row beside a filling sibling gets its own `MainSize` or sits with its neighbours in a
+  filling inner stack, as the Macro Deck sizing docs require; otherwise every reader squeezes it. The
+  header count also reserves its figures with `Digits`. `UiTests` checks the layout rows.
 - The preview renderer measures cells against the tile's shorter side and cannot reach the large layout;
   the `Large layout` previews render it directly.
 - Global shortcuts use `RegisterHotKey` and Carbon `RegisterEventHotKey` only. No keyboard hooks, no input
