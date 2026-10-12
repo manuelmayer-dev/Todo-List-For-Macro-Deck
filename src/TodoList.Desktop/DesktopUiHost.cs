@@ -32,7 +32,7 @@ public sealed class DesktopUiHost : IDesktopUi, IDisposable
 	private IClassicDesktopStyleApplicationLifetime? _lifetime;
 	private DesktopController? _controller;
 	private bool _shutdownRequested;
-	private volatile bool _uiStopped;
+	private volatile bool _uiRunning;
 	private volatile bool _available;
 
 	public DesktopUiHost(TodoService todos, SettingsService settings, DataLocationService location, TimeProvider clock, MinuteClock minuteClock, Task storeReady, string lockPath, ILogger logger)
@@ -65,6 +65,7 @@ public sealed class DesktopUiHost : IDesktopUi, IDisposable
 
 		_ = pluginTask.ContinueWith(_ => RequestShutdown(), CancellationToken.None, TaskContinuationOptions.None, TaskScheduler.Default);
 
+		_uiRunning = true;
 		try
 		{
 			Avalonia.Logging.Logger.Sink = new AvaloniaSerilogSink(_logger);
@@ -80,7 +81,7 @@ public sealed class DesktopUiHost : IDesktopUi, IDisposable
 		}
 		finally
 		{
-			_uiStopped = true;
+			_uiRunning = false;
 			_available = false;
 			_controller?.Dispose();
 			_controller = null;
@@ -168,10 +169,11 @@ public sealed class DesktopUiHost : IDesktopUi, IDisposable
 			Dispatcher.UIThread.Post(() => lifetime.Shutdown());
 		}
 
-		// If the UI thread is stuck, the plugin must still exit within Macro Deck's grace period.
+		// If the UI thread is stuck, also while it is still starting, the plugin must still exit within Macro
+		// Deck's grace period.
 		_ = Task.Delay(ShutdownWatchdog).ContinueWith(_ =>
 		{
-			if (Volatile.Read(ref _lifetime) is not null && !_uiStopped)
+			if (_uiRunning)
 			{
 				_logger.Warning("The desktop todo list did not stop in time; exiting");
 				Environment.Exit(0);
