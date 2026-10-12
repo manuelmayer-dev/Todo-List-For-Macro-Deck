@@ -38,6 +38,15 @@ jobs:
       - name: Install the plugin CLI
         run: dotnet tool install --global MacroDeck.Plugin.Cli --version 3.0.0-beta.16
 
+      # TEMPORARY: reproduces MDC0604 repeatedly and prints what the host saw when the plugin stays live.
+      - name: Shutdown diagnostics
+        if: runner.os == 'Windows'
+        continue-on-error: true
+        shell: bash
+        env:
+          TODO_DIAG_PLUGIN: ${{ github.workspace }}/src/TodoList.Plugin/bin/Release/net10.0/TodoList.Plugin.dll
+        run: dotnet test tests/TodoList.Plugin.Tests -c Release --no-build --filter "TestCategory=ShutdownDiagnostics" --logger "console;verbosity=detailed"
+
       # Proves the conformance suite on every supported platform before a release does.
       - name: Conformance
         run: macrodeck-plugin test --project src/TodoList.Plugin --required-only
