@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- The default-language file. Every translation is checked against it and the fallback chain ends
+       here, so it is required even for a plugin that ships one language. Add a language by adding
+       Localization/Strings.<culture>.resx beside it (Strings.de.resx, Strings.pt-BR.resx).
+       A dotted key becomes a nested class: Actions.Create.Name is Strings.Actions.Create.Name(). -->
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Events.Category" xml:space="preserve">
+    <value>Todo-Liste</value>
+  </data>
+  <data name="Events.Created.Name" xml:space="preserve">
+    <value>Todo erstellt</value>
+  </data>
+  <data name="Events.Created.Description" xml:space="preserve">
+    <value>Ein neues Todo wurde hinzugefügt.</value>
+  </data>
+  <data name="Events.Updated.Name" xml:space="preserve">
+    <value>Todo geändert</value>
+  </data>
+  <data name="Events.Updated.Description" xml:space="preserve">
+    <value>Titel, Notizen oder Fälligkeit eines Todos haben sich geändert.</value>
+  </data>
+  <data name="Events.Completed.Name" xml:space="preserve">
+    <value>Todo erledigt</value>
+  </data>
+  <data name="Events.Completed.Description" xml:space="preserve">
+    <value>Ein Todo wurde als erledigt markiert.</value>
+  </data>
+  <data name="Events.Reopened.Name" xml:space="preserve">
+    <value>Todo wieder geöffnet</value>
+  </data>
+  <data name="Events.Reopened.Description" xml:space="preserve">
+    <value>Ein erledigtes Todo wurde wieder geöffnet.</value>
+  </data>
+  <data name="Events.Deleted.Name" xml:space="preserve">
+    <value>Todo gelöscht</value>
+  </data>
+  <data name="Events.Deleted.Description" xml:space="preserve">
+    <value>Ein Todo wurde gelöscht.</value>
+  </data>
+  <data name="Events.Due.Name" xml:space="preserve">
+    <value>Todo fällig</value>
+  </data>
+  <data name="Events.Due.Description" xml:space="preserve">
+    <value>Ein offenes Todo ist in das Zeitfenster vor seiner Frist gekommen.</value>
+  </data>
+  <data name="Events.Overdue.Name" xml:space="preserve">
+    <value>Todo überfällig</value>
+  </data>
+  <data name="Events.Overdue.Description" xml:space="preserve">
+    <value>Ein offenes Todo hat seine Frist (plus Kulanzzeit) überschritten.</value>
+  </data>
+  <data name="Events.Payload.TodoId" xml:space="preserve">
+    <value>Todo-ID</value>
+  </data>
+  <data name="Events.Payload.Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Events.Payload.Description" xml:space="preserve">
+    <value>Notizen</value>
+  </data>
+  <data name="Events.Payload.DueAt" xml:space="preserve">
+    <value>Fälligkeit</value>
+  </data>
+  <data name="Events.Payload.Status" xml:space="preserve">
+    <value>Status (open, due, overdue oder completed)</value>
+  </data>
+  <data name="Variables.OpenCount" xml:space="preserve">
+    <value>Anzahl der nicht erledigten Todos.</value>
+  </data>
+  <data name="Variables.CompletedCount" xml:space="preserve">
+    <value>Anzahl der erledigten Todos.</value>
+  </data>
+  <data name="Variables.DueCount" xml:space="preserve">
+    <value>Anzahl der offenen Todos, die bald fällig sind.</value>
+  </data>
+  <data name="Variables.OverdueCount" xml:space="preserve">
+    <value>Anzahl der offenen Todos, deren Frist abgelaufen ist.</value>
+  </data>
+  <data name="Variables.TotalCount" xml:space="preserve">
+    <value>Anzahl aller Todos.</value>
+  </data>
+  <data name="Variables.NextTitle" xml:space="preserve">
+    <value>Titel des offenen Todos mit der frühesten Fälligkeit, sonst des ersten offenen Todos.</value>
+  </data>
+  <data name="Variables.NextDueAt" xml:space="preserve">
+    <value>Fälligkeit des nächsten offenen Todos (ISO 8601, Ortszeit).</value>
+  </data>
+  <data name="Variables.NextDueInMinutes" xml:space="preserve">
+    <value>Minuten bis zur Fälligkeit des nächsten offenen Todos; negativ, wenn überfällig.</value>
+  </data>
+  <data name="Errors.StoreUnavailable" xml:space="preserve">
+    <value>Die Todo-Liste konnte nicht geladen werden. Details stehen im Macro-Deck-Protokoll.</value>
+  </data>
+  <data name="Errors.StoreFailed" xml:space="preserve">
+    <value>Die Todo-Liste konnte nicht gespeichert werden. Details stehen im Macro-Deck-Protokoll.</value>
+  </data>
+  <data name="Errors.TitleRequired" xml:space="preserve">
+    <value>Gib einen Titel für das Todo ein.</value>
+  </data>
+  <data name="Errors.TitleTooLong" xml:space="preserve">
+    <value>Der Titel darf höchstens {max} Zeichen lang sein.</value>
+  </data>
+  <data name="Errors.DescriptionTooLong" xml:space="preserve">
+    <value>Die Notizen dürfen höchstens {max} Zeichen lang sein.</value>
+  </data>
+  <data name="Errors.InvalidDueDate" xml:space="preserve">
+    <value>Die Fälligkeit ist ungültig. Gib ein Datum wie 2026-10-12 18:00, eine Uhrzeit wie 18:00, Wörter wie morgen 9 oder einen Abstand wie +2h ein.</value>
+  </data>
+  <data name="Errors.NoOpenTodo" xml:space="preserve">
+    <value>Es gibt kein offenes Todo zum Erledigen.</value>
+  </data>
+  <data name="Errors.InvalidTodo" xml:space="preserve">
+    <value>Das gewählte Todo ist ungültig. Wähle es erneut aus der Liste.</value>
+  </data>
+  <data name="Errors.TodoNotFound" xml:space="preserve">
+    <value>Das Todo existiert nicht mehr.</value>
+  </data>
+  <data name="Errors.NeedsClient" xml:space="preserve">
+    <value>Die Todo-Liste lässt sich nur auf einem Macro-Deck-Bildschirm öffnen, nicht aus Automationen oder auf Hardware-Decks.</value>
+  </data>
+  <data name="Errors.DesktopUnavailable" xml:space="preserve">
+    <value>Die Desktop-Todo-Liste läuft auf diesem Computer nicht.</value>
+  </data>
+  <data name="Actions.Common.Todo" xml:space="preserve">
+    <value>Todo</value>
+  </data>
+  <data name="Actions.Create.Name" xml:space="preserve">
+    <value>Todo erstellen</value>
+  </data>
+  <data name="Actions.Create.Description" xml:space="preserve">
+    <value>Fügt der Liste ein Todo hinzu.</value>
+  </data>
+  <data name="Actions.Create.Title.Label" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Actions.Create.Title.Placeholder" xml:space="preserve">
+    <value>Milch kaufen</value>
+  </data>
+  <data name="Actions.Create.Notes.Label" xml:space="preserve">
+    <value>Notizen</value>
+  </data>
+  <data name="Actions.Create.DueAt.Label" xml:space="preserve">
+    <value>Fälligkeit</value>
+  </data>
+  <data name="Actions.Create.DueAt.Description" xml:space="preserve">
+    <value>Optional. Leer lassen für ein Todo ohne Frist.</value>
+  </data>
+  <data name="Actions.Complete.Name" xml:space="preserve">
+    <value>Todo erledigen</value>
+  </data>
+  <data name="Actions.Complete.Description" xml:space="preserve">
+    <value>Markiert ein Todo als erledigt. Ohne Auswahl wird das nächste Todo erledigt.</value>
+  </data>
+  <data name="Actions.Complete.NextOpen" xml:space="preserve">
+    <value>Nächstes offenes Todo</value>
+  </data>
+  <data name="Actions.Reopen.Name" xml:space="preserve">
+    <value>Todo wieder öffnen</value>
+  </data>
+  <data name="Actions.Reopen.Description" xml:space="preserve">
+    <value>Öffnet ein erledigtes Todo wieder.</value>
+  </data>
+  <data name="Actions.Delete.Name" xml:space="preserve">
+    <value>Todo löschen</value>
+  </data>
+  <data name="Actions.Delete.Description" xml:space="preserve">
+    <value>Löscht ein Todo endgültig.</value>
+  </data>
+  <data name="Actions.OpenList.Name" xml:space="preserve">
+    <value>Todo-Liste öffnen</value>
+  </data>
+  <data name="Actions.OpenList.Description" xml:space="preserve">
+    <value>Zeigt die Todo-Liste auf dem Macro-Deck-Bildschirm, auf dem der Button gedrückt wurde.</value>
+  </data>
+  <data name="Actions.OpenDesktop.Name" xml:space="preserve">
+    <value>Desktop-Todo-Liste öffnen</value>
+  </data>
+  <data name="Actions.OpenDesktop.Description" xml:space="preserve">
+    <value>Öffnet das Todo-Popup am Tray-Symbol auf dem Computer, auf dem Macro Deck läuft.</value>
+  </data>
+  <data name="Modal.Title" xml:space="preserve">
+    <value>Todo-Liste</value>
+  </data>
+  <data name="Modal.Done" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="Modal.Tabs.Open" xml:space="preserve">
+    <value>Offen ({count})</value>
+  </data>
+  <data name="Modal.Tabs.Due" xml:space="preserve">
+    <value>Fällig ({count})</value>
+  </data>
+  <data name="Modal.Tabs.Completed" xml:space="preserve">
+    <value>Erledigt ({count})</value>
+  </data>
+  <data name="Modal.Tabs.OpenShort" xml:space="preserve">
+    <value>Offen</value>
+  </data>
+  <data name="Modal.Tabs.DueShort" xml:space="preserve">
+    <value>Fällig</value>
+  </data>
+  <data name="Modal.Tabs.CompletedShort" xml:space="preserve">
+    <value>Erledigt</value>
+  </data>
+  <data name="Modal.AddPlaceholder" xml:space="preserve">
+    <value>Todo eingeben und Enter drücken</value>
+  </data>
+  <data name="Modal.EmptyOpen" xml:space="preserve">
+    <value>Nichts zu tun. Füge oben ein Todo hinzu.</value>
+  </data>
+  <data name="Modal.EmptyDue" xml:space="preserve">
+    <value>Nichts ist fällig oder überfällig.</value>
+  </data>
+  <data name="Modal.EmptyCompleted" xml:space="preserve">
+    <value>Keine erledigten Todos.</value>
+  </data>
+  <data name="Modal.Edit.Heading" xml:space="preserve">
+    <value>Todo bearbeiten</value>
+  </data>
+  <data name="Modal.Edit.Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Modal.Edit.Notes" xml:space="preserve">
+    <value>Notizen</value>
+  </data>
+  <data name="Modal.Edit.NotesPlaceholder" xml:space="preserve">
+    <value>Optional</value>
+  </data>
+  <data name="Modal.Edit.Due" xml:space="preserve">
+    <value>Fälligkeit</value>
+  </data>
+  <data name="Modal.Edit.DuePlaceholder" xml:space="preserve">
+    <value>morgen 9, fr 18:00, 18:00 oder +2h</value>
+  </data>
+  <data name="Modal.Edit.DayEarlier" xml:space="preserve">
+    <value>−1 Tag</value>
+  </data>
+  <data name="Modal.Edit.DayLater" xml:space="preserve">
+    <value>+1 Tag</value>
+  </data>
+  <data name="Modal.Edit.HourEarlier" xml:space="preserve">
+    <value>−1 Stunde</value>
+  </data>
+  <data name="Modal.Edit.HourLater" xml:space="preserve">
+    <value>+1 Stunde</value>
+  </data>
+  <data name="Presets.InOneHour" xml:space="preserve">
+    <value>In 1 Stunde</value>
+  </data>
+  <data name="Presets.TodayEvening" xml:space="preserve">
+    <value>Heute Abend</value>
+  </data>
+  <data name="Presets.TomorrowMorning" xml:space="preserve">
+    <value>Morgen</value>
+  </data>
+  <data name="Presets.NextWeek" xml:space="preserve">
+    <value>Nächste Woche</value>
+  </data>
+  <data name="Presets.None" xml:space="preserve">
+    <value>Kein Datum</value>
+  </data>
+  <data name="Due.Overdue" xml:space="preserve">
+    <value>Überfällig</value>
+  </data>
+  <data name="Due.InMinutes" xml:space="preserve">
+    <value>In {minutes} Min.</value>
+  </data>
+  <data name="Due.TodayAt" xml:space="preserve">
+    <value>Heute {time}</value>
+  </data>
+  <data name="Due.TomorrowAt" xml:space="preserve">
+    <value>Morgen {time}</value>
+  </data>
+  <data name="Due.OnDate" xml:space="preserve">
+    <value>{date}</value>
+  </data>
+  <data name="Widget.Name" xml:space="preserve">
+    <value>Todo-Liste</value>
+  </data>
+  <data name="Widget.Description" xml:space="preserve">
+    <value>Zeigt deine offenen Todos. Antippen öffnet die ganze Liste.</value>
+  </data>
+  <data name="Widget.Loading" xml:space="preserve">
+    <value>Lädt</value>
+  </data>
+  <data name="Widget.Unavailable" xml:space="preserve">
+    <value>Nicht verfügbar</value>
+  </data>
+  <data name="Widget.OverdueCount" xml:space="preserve">
+    <value>{count} überfällig</value>
+  </data>
+  <data name="Widget.OpenCaption" xml:space="preserve">
+    <value>offen</value>
+  </data>
+  <data name="Widget.Empty" xml:space="preserve">
+    <value>Alles erledigt</value>
+  </data>
+  <data name="Widget.EmptyFiltered" xml:space="preserve">
+    <value>Nichts fällig</value>
+  </data>
+  <data name="WidgetConfig.MaxVisible.Label" xml:space="preserve">
+    <value>Sichtbare Todos</value>
+  </data>
+  <data name="WidgetConfig.MaxVisible.Description" xml:space="preserve">
+    <value>Wie viele Todos das Widget gleichzeitig zeigt, soweit die Größe reicht.</value>
+  </data>
+  <data name="WidgetConfig.Sort.Label" xml:space="preserve">
+    <value>Sortieren nach</value>
+  </data>
+  <data name="WidgetConfig.Filter.Label" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="WidgetConfig.Filter.All" xml:space="preserve">
+    <value>Alle Todos</value>
+  </data>
+  <data name="WidgetConfig.Filter.Due" xml:space="preserve">
+    <value>Bald fällig</value>
+  </data>
+  <data name="WidgetConfig.Filter.Overdue" xml:space="preserve">
+    <value>Überfällig</value>
+  </data>
+  <data name="WidgetConfig.Filter.DueOrOverdue" xml:space="preserve">
+    <value>Bald fällig oder überfällig</value>
+  </data>
+  <data name="WidgetConfig.ShowDueDates" xml:space="preserve">
+    <value>Fälligkeiten anzeigen</value>
+  </data>
+  <data name="WidgetConfig.OverdueFirst" xml:space="preserve">
+    <value>Überfällige zuerst</value>
+  </data>
+  <data name="WidgetConfig.ShowCompleted" xml:space="preserve">
+    <value>Erledigte Todos anzeigen</value>
+  </data>
+  <data name="WidgetConfig.Interactive.Label" xml:space="preserve">
+    <value>Erledigen-Buttons auf großen Widgets</value>
+  </data>
+  <data name="WidgetConfig.Interactive.Description" xml:space="preserve">
+    <value>Große Widgets können pro Todo einen Erledigen-Button zeigen. Dann blättert ein Antippen des Widgets durch die Liste, statt sie zu öffnen.</value>
+  </data>
+  <data name="Sort.DueDate" xml:space="preserve">
+    <value>Fälligkeit</value>
+  </data>
+  <data name="Sort.CreatedDate" xml:space="preserve">
+    <value>Neueste zuerst</value>
+  </data>
+  <data name="Sort.Manual" xml:space="preserve">
+    <value>Eigene Reihenfolge</value>
+  </data>
+</root>

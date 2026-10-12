@@ -1,0 +1,10 @@
+<Project>
+
+    <!-- Avalonia's build tooling sends anonymous build statistics from its AvaloniaStats target, which only
+         runs while this property is set. Clearing it keeps every build, including the release workflow
+         that cannot set AVALONIA_TELEMETRY_OPTOUT, from contacting the network. -->
+    <PropertyGroup>
+        <UsedAvaloniaProducts></UsedAvaloniaProducts>
+    </PropertyGroup>
+
+</Project>

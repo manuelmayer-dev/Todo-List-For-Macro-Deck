@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.macro-deck.app/plugin-manifest-v1.schema.json",
+  "manifestVersion": 1,
+  "id": "com.suchbyte.todo-list-plugin",
+  "name": "Todo List for Macro Deck",
+  "version": "1.0.0",
+  "description": "A minimalist todo list for Macro Deck with a widget, a list modal, events, variables and actions, plus a menu bar or tray popup and a global quick-add shortcut on the desktop.",
+  "icon": "Assets/icon.svg",
+  "entrypoints": {
+    "win-x64": {
+      "executable": "runtimes/win-x64/TodoList.Plugin.dll",
+      "runtime": {
+        "kind": "FrameworkDependent",
+        "dotnetVersion": "10.0"
+      }
+    },
+    "osx-arm64": {
+      "executable": "runtimes/osx-arm64/TodoList.Plugin.dll",
+      "runtime": {
+        "kind": "FrameworkDependent",
+        "dotnetVersion": "10.0"
+      }
+    }
+  },
+  "publisher": {
+    "name": "SuchByte"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/manuelmayer-dev/Todo-List-For-Macro-Deck",
+  "compatibility": {
+    "macroDeck": ">=3.0.0-0"
+  },
+  "permissions": [
+    "host:widget-types",
+    "host:action-interactions",
+    "events:publish"
+  ],
+  "ai": {
+    "interaction": false,
+    "generatedContent": false,
+    "generatedAssets": true
+  }
+}

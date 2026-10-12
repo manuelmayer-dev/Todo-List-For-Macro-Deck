@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Text of the desktop popup, quick-add and settings windows. -->
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App.Name" xml:space="preserve">
+    <value>Todo-Liste</value>
+  </data>
+  <data name="Popup.Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="Input.AddPlaceholder" xml:space="preserve">
+    <value>Todo hinzufügen</value>
+  </data>
+  <data name="Due.Preset.None" xml:space="preserve">
+    <value>Ohne Datum</value>
+  </data>
+  <data name="Due.Preset.InOneHour" xml:space="preserve">
+    <value>In 1 Stunde</value>
+  </data>
+  <data name="Due.Preset.TodayEvening" xml:space="preserve">
+    <value>Heute Abend</value>
+  </data>
+  <data name="Due.Preset.TomorrowMorning" xml:space="preserve">
+    <value>Morgen früh</value>
+  </data>
+  <data name="Due.Preset.NextWeek" xml:space="preserve">
+    <value>Nächste Woche</value>
+  </data>
+  <data name="Due.Preset.Custom" xml:space="preserve">
+    <value>Eigenes Datum …</value>
+  </data>
+  <data name="Popup.ShowCompleted" xml:space="preserve">
+    <value>Erledigte anzeigen</value>
+  </data>
+  <data name="Popup.Empty.Open" xml:space="preserve">
+    <value>Nichts zu tun.</value>
+  </data>
+  <data name="Popup.Empty.Completed" xml:space="preserve">
+    <value>Noch keine erledigten Todos.</value>
+  </data>
+  <data name="Popup.Empty.Hint" xml:space="preserve">
+    <value>Oben eintippen und Enter drücken, um eins hinzuzufügen.</value>
+  </data>
+  <data name="Popup.Loading" xml:space="preserve">
+    <value>Todos werden geladen …</value>
+  </data>
+  <data name="Errors.StoreUnavailable" xml:space="preserve">
+    <value>Die Todo-Liste konnte nicht geladen werden. Sieh im Macro-Deck-Protokoll nach.</value>
+  </data>
+  <data name="Errors.StoreFailed" xml:space="preserve">
+    <value>Die Änderung konnte nicht gespeichert werden. Sieh im Macro-Deck-Protokoll nach.</value>
+  </data>
+  <data name="Errors.TitleRequired" xml:space="preserve">
+    <value>Gib einen Titel ein.</value>
+  </data>
+  <data name="Errors.TitleTooLong" xml:space="preserve">
+    <value>Der Titel darf höchstens {max} Zeichen lang sein.</value>
+  </data>
+  <data name="Errors.NotesTooLong" xml:space="preserve">
+    <value>Die Notizen dürfen höchstens {max} Zeichen lang sein.</value>
+  </data>
+  <data name="Errors.TodoNotFound" xml:space="preserve">
+    <value>Das Todo existiert nicht mehr.</value>
+  </data>
+  <data name="Due.Overdue" xml:space="preserve">
+    <value>Überfällig</value>
+  </data>
+  <data name="Due.InMinutes" xml:space="preserve">
+    <value>In {minutes} Min.</value>
+  </data>
+  <data name="Due.Today" xml:space="preserve">
+    <value>Heute {time}</value>
+  </data>
+  <data name="Due.Tomorrow" xml:space="preserve">
+    <value>Morgen {time}</value>
+  </data>
+  <data name="Menu.Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="Menu.Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="Menu.Complete" xml:space="preserve">
+    <value>Erledigen</value>
+  </data>
+  <data name="Menu.Reopen" xml:space="preserve">
+    <value>Wieder öffnen</value>
+  </data>
+  <data name="Menu.MoveUp" xml:space="preserve">
+    <value>Nach oben</value>
+  </data>
+  <data name="Menu.MoveDown" xml:space="preserve">
+    <value>Nach unten</value>
+  </data>
+  <data name="Popup.ConfirmDelete" xml:space="preserve">
+    <value>„{title}“ löschen? Enter löscht, Esc behält es.</value>
+  </data>
+  <data name="Edit.Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Edit.Notes" xml:space="preserve">
+    <value>Notizen</value>
+  </data>
+  <data name="Edit.DueDate" xml:space="preserve">
+    <value>Fällig</value>
+  </data>
+  <data name="Settings.Title" xml:space="preserve">
+    <value>Todo-Liste – Einstellungen</value>
+  </data>
+  <data name="Settings.Shortcut.Section" xml:space="preserve">
+    <value>Kurzbefehl für Schnellerfassung</value>
+  </data>
+  <data name="Settings.Shortcut.Hint" xml:space="preserve">
+    <value>Öffnet das Schnellerfassungsfenster von überall.</value>
+  </data>
+  <data name="Settings.Shortcut.Enabled" xml:space="preserve">
+    <value>Globalen Kurzbefehl aktivieren</value>
+  </data>
+  <data name="Settings.Shortcut.Record" xml:space="preserve">
+    <value>Klicken und Kurzbefehl drücken</value>
+  </data>
+  <data name="Settings.Shortcut.Recording" xml:space="preserve">
+    <value>Neuen Kurzbefehl drücken …</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="Settings.Shortcut.Status.InUse" xml:space="preserve">
+    <value>Eine andere App nutzt diesen Kurzbefehl bereits. Wähle einen anderen.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Invalid" xml:space="preserve">
+    <value>Nutze Strg, Alt oder Cmd/Win zusammen mit einem Buchstaben, einer Ziffer, einer F-Taste oder der Leertaste.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.OptionOnly" xml:space="preserve">
+    <value>macOS erlaubt keine Kurzbefehle nur mit Wahltaste. Nimm Control oder Befehl dazu.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Disabled" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Unsupported" xml:space="preserve">
+    <value>Globale Kurzbefehle werden auf diesem System nicht unterstützt.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Failed" xml:space="preserve">
+    <value>Der Kurzbefehl konnte nicht registriert werden.</value>
+  </data>
+  <data name="Settings.Appearance.Section" xml:space="preserve">
+    <value>Darstellung</value>
+  </data>
+  <data name="Settings.Appearance.Theme" xml:space="preserve">
+    <value>Erscheinungsbild</value>
+  </data>
+  <data name="Settings.Appearance.ThemeSystem" xml:space="preserve">
+    <value>Wie System</value>
+  </data>
+  <data name="Settings.Appearance.ThemeLight" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="Settings.Appearance.ThemeDark" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="Settings.Todos.Section" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="Settings.Todos.Hint" xml:space="preserve">
+    <value>Wann Todos als fällig und überfällig gelten. Fällig beginnt vor der Frist, überfällig nach der Frist plus Kulanzzeit.</value>
+  </data>
+  <data name="Settings.Todos.Sort" xml:space="preserve">
+    <value>Sortieren nach</value>
+  </data>
+  <data name="Settings.Todos.SortDueDate" xml:space="preserve">
+    <value>Fälligkeit</value>
+  </data>
+  <data name="Settings.Todos.SortCreated" xml:space="preserve">
+    <value>Neueste zuerst</value>
+  </data>
+  <data name="Settings.Todos.SortManual" xml:space="preserve">
+    <value>Eigene Reihenfolge</value>
+  </data>
+  <data name="Settings.Todos.DefaultDue" xml:space="preserve">
+    <value>Standard-Fälligkeit</value>
+  </data>
+  <data name="Settings.Todos.DueSoon" xml:space="preserve">
+    <value>Bald fällig vor der Frist</value>
+  </data>
+  <data name="Settings.Todos.Overdue" xml:space="preserve">
+    <value>Überfällig nach der Frist</value>
+  </data>
+  <data name="Settings.Todos.ShowCompleted" xml:space="preserve">
+    <value>Erledigte Todos im Popup anzeigen</value>
+  </data>
+  <data name="Settings.Todos.ConfirmDelete" xml:space="preserve">
+    <value>Vor dem Löschen nachfragen</value>
+  </data>
+  <data name="Settings.Popup.Section" xml:space="preserve">
+    <value>Popup in der Menüleiste</value>
+  </data>
+  <data name="Settings.Popup.Hint" xml:space="preserve">
+    <value>Wie sich das Popup am Menüleisten- oder Tray-Symbol verhält.</value>
+  </data>
+  <data name="Settings.Popup.CloseOnFocusLoss" xml:space="preserve">
+    <value>Popup schließen, wenn woanders geklickt wird</value>
+  </data>
+  <data name="Settings.Popup.RememberState" xml:space="preserve">
+    <value>Auswahl und Filter merken</value>
+  </data>
+  <data name="Tray.Open" xml:space="preserve">
+    <value>Todo-Liste öffnen</value>
+  </data>
+  <data name="Tray.QuickAdd" xml:space="preserve">
+    <value>Schnell hinzufügen</value>
+  </data>
+  <data name="Tray.Settings" xml:space="preserve">
+    <value>Einstellungen …</value>
+  </data>
+  <data name="Popup.ShortcutHint" xml:space="preserve">
+    <value>{shortcut} Schnellerfassung</value>
+  </data>
+  <data name="Popup.OpenCount" xml:space="preserve">
+    <value>{count} offen</value>
+  </data>
+  <data name="Hints.Done" xml:space="preserve">
+    <value>Erledigt</value>
+  </data>
+  <data name="Hints.Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="Hints.ShowCompleted" xml:space="preserve">
+    <value>Erledigte</value>
+  </data>
+  <data name="Hints.Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="Hints.Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="Hints.Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="Hints.Keep" xml:space="preserve">
+    <value>Behalten</value>
+  </data>
+  <data name="Hints.Add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="Hints.DueField" xml:space="preserve">
+    <value>Fälligkeit</value>
+  </data>
+  <data name="Hints.Suggest" xml:space="preserve">
+    <value>Vorschläge</value>
+  </data>
+  <data name="Hints.Choose" xml:space="preserve">
+    <value>Auswählen</value>
+  </data>
+  <data name="Due.Field.Placeholder" xml:space="preserve">
+    <value>morgen 9, fr 18:00, +2h, 20.10.</value>
+  </data>
+  <data name="Due.Field.Invalid" xml:space="preserve">
+    <value>Kein Datum. Versuch 18:30, +2h oder morgen 9.</value>
+  </data>
+  <data name="Due.Field.None" xml:space="preserve">
+    <value>Ohne Datum</value>
+  </data>
+  <data name="Due.Field.Unknown" xml:space="preserve">
+    <value>Unbekanntes Datum</value>
+  </data>
+  <data name="Due.Field.PickDate" xml:space="preserve">
+    <value>Datum wählen</value>
+  </data>
+  <data name="Settings.Duration.None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
+  <data name="Settings.Duration.Minutes" xml:space="preserve">
+    <value>{count} Min.</value>
+  </data>
+  <data name="Settings.Duration.Hours" xml:space="preserve">
+    <value>{count} Std.</value>
+  </data>
+  <data name="Settings.Duration.Days" xml:space="preserve">
+    <value>{count} T.</value>
+  </data>
+  <data name="Settings.Storage.Section" xml:space="preserve">
+    <value>Speicherort</value>
+  </data>
+  <data name="Settings.Storage.Hint" xml:space="preserve">
+    <value>Wähle einen synchronisierten Ordner, um dieselben Todos auf mehreren Computern zu haben. Es sollte immer nur ein Computer gleichzeitig darauf zugreifen.</value>
+  </data>
+  <data name="Settings.Storage.Folder" xml:space="preserve">
+    <value>Datenordner</value>
+  </data>
+  <data name="Settings.Storage.Choose" xml:space="preserve">
+    <value>Auswählen …</value>
+  </data>
+  <data name="Settings.Storage.UseDefault" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Settings.Storage.Reveal" xml:space="preserve">
+    <value>Zeigen</value>
+  </data>
+  <data name="Settings.Storage.PickerTitle" xml:space="preserve">
+    <value>Ordner für deine Todos wählen</value>
+  </data>
+  <data name="Settings.Storage.Existing" xml:space="preserve">
+    <value>Dieser Ordner enthält bereits Todos.</value>
+  </data>
+  <data name="Settings.Storage.UseExisting" xml:space="preserve">
+    <value>Diese verwenden</value>
+  </data>
+  <data name="Settings.Storage.Replace" xml:space="preserve">
+    <value>Durch meine ersetzen</value>
+  </data>
+  <data name="Settings.Storage.Moved" xml:space="preserve">
+    <value>Verschoben. Die bisherige Datei bleibt als Kopie am alten Ort.</value>
+  </data>
+  <data name="Settings.Storage.UsedExisting" xml:space="preserve">
+    <value>Es werden jetzt die Todos aus diesem Ordner verwendet.</value>
+  </data>
+  <data name="Settings.Storage.Failed" xml:space="preserve">
+    <value>Der Ordner konnte nicht verwendet werden. Prüfe, ob er existiert und beschreibbar ist.</value>
+  </data>
+</root>

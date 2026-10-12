@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Text of the desktop popup, quick-add and settings windows. -->
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App.Name" xml:space="preserve">
+    <value>Todo List</value>
+  </data>
+  <data name="Popup.Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Input.AddPlaceholder" xml:space="preserve">
+    <value>Add a todo</value>
+  </data>
+  <data name="Due.Preset.None" xml:space="preserve">
+    <value>No due date</value>
+  </data>
+  <data name="Due.Preset.InOneHour" xml:space="preserve">
+    <value>In 1 hour</value>
+  </data>
+  <data name="Due.Preset.TodayEvening" xml:space="preserve">
+    <value>This evening</value>
+  </data>
+  <data name="Due.Preset.TomorrowMorning" xml:space="preserve">
+    <value>Tomorrow morning</value>
+  </data>
+  <data name="Due.Preset.NextWeek" xml:space="preserve">
+    <value>Next week</value>
+  </data>
+  <data name="Due.Preset.Custom" xml:space="preserve">
+    <value>Custom…</value>
+  </data>
+  <data name="Popup.ShowCompleted" xml:space="preserve">
+    <value>Show completed</value>
+  </data>
+  <data name="Popup.Empty.Open" xml:space="preserve">
+    <value>Nothing to do.</value>
+  </data>
+  <data name="Popup.Empty.Completed" xml:space="preserve">
+    <value>No completed todos yet.</value>
+  </data>
+  <data name="Popup.Empty.Hint" xml:space="preserve">
+    <value>Type above and press Enter to add one.</value>
+  </data>
+  <data name="Popup.Loading" xml:space="preserve">
+    <value>Loading todos...</value>
+  </data>
+  <data name="Errors.StoreUnavailable" xml:space="preserve">
+    <value>The todo list could not be loaded. Check the Macro Deck log.</value>
+  </data>
+  <data name="Errors.StoreFailed" xml:space="preserve">
+    <value>The change could not be saved. Check the Macro Deck log.</value>
+  </data>
+  <data name="Errors.TitleRequired" xml:space="preserve">
+    <value>Enter a title.</value>
+  </data>
+  <data name="Errors.TitleTooLong" xml:space="preserve">
+    <value>The title can be at most {max} characters long.</value>
+    <comment>[max: int]</comment>
+  </data>
+  <data name="Errors.NotesTooLong" xml:space="preserve">
+    <value>The notes can be at most {max} characters long.</value>
+    <comment>[max: int]</comment>
+  </data>
+  <data name="Errors.TodoNotFound" xml:space="preserve">
+    <value>The todo no longer exists.</value>
+  </data>
+  <data name="Due.Overdue" xml:space="preserve">
+    <value>Overdue</value>
+  </data>
+  <data name="Due.InMinutes" xml:space="preserve">
+    <value>In {minutes} min</value>
+    <comment>[minutes: int]</comment>
+  </data>
+  <data name="Due.Today" xml:space="preserve">
+    <value>Today {time}</value>
+  </data>
+  <data name="Due.Tomorrow" xml:space="preserve">
+    <value>Tomorrow {time}</value>
+  </data>
+  <data name="Menu.Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Menu.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Menu.Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="Menu.Reopen" xml:space="preserve">
+    <value>Reopen</value>
+  </data>
+  <data name="Menu.MoveUp" xml:space="preserve">
+    <value>Move up</value>
+  </data>
+  <data name="Menu.MoveDown" xml:space="preserve">
+    <value>Move down</value>
+  </data>
+  <data name="Popup.ConfirmDelete" xml:space="preserve">
+    <value>Delete “{title}”? Enter to delete, Esc to keep it.</value>
+  </data>
+  <data name="Edit.Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Edit.Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Edit.DueDate" xml:space="preserve">
+    <value>Due date</value>
+  </data>
+  <data name="Settings.Title" xml:space="preserve">
+    <value>Todo List Settings</value>
+  </data>
+  <data name="Settings.Shortcut.Section" xml:space="preserve">
+    <value>Quick-add shortcut</value>
+  </data>
+  <data name="Settings.Shortcut.Hint" xml:space="preserve">
+    <value>Opens the quick-add window from anywhere.</value>
+  </data>
+  <data name="Settings.Shortcut.Enabled" xml:space="preserve">
+    <value>Enable global shortcut</value>
+  </data>
+  <data name="Settings.Shortcut.Record" xml:space="preserve">
+    <value>Click and press a shortcut</value>
+  </data>
+  <data name="Settings.Shortcut.Recording" xml:space="preserve">
+    <value>Press the new shortcut...</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Settings.Shortcut.Status.InUse" xml:space="preserve">
+    <value>Another application already uses this shortcut. Choose a different one.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Invalid" xml:space="preserve">
+    <value>Use Ctrl, Alt or Cmd/Win together with a letter, digit, F-key or Space.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.OptionOnly" xml:space="preserve">
+    <value>macOS does not allow shortcuts that only use Option. Add Control or Command.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Unsupported" xml:space="preserve">
+    <value>Global shortcuts are not supported on this system.</value>
+  </data>
+  <data name="Settings.Shortcut.Status.Failed" xml:space="preserve">
+    <value>The shortcut could not be registered.</value>
+  </data>
+  <data name="Settings.Appearance.Section" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Settings.Appearance.Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Settings.Appearance.ThemeSystem" xml:space="preserve">
+    <value>Follow system</value>
+  </data>
+  <data name="Settings.Appearance.ThemeLight" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Settings.Appearance.ThemeDark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Settings.Todos.Section" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="Settings.Todos.Hint" xml:space="preserve">
+    <value>When todos count as due and overdue. Due starts before the deadline, overdue after it plus the grace time.</value>
+  </data>
+  <data name="Settings.Todos.Sort" xml:space="preserve">
+    <value>Sort by</value>
+  </data>
+  <data name="Settings.Todos.SortDueDate" xml:space="preserve">
+    <value>Due date</value>
+  </data>
+  <data name="Settings.Todos.SortCreated" xml:space="preserve">
+    <value>Newest first</value>
+  </data>
+  <data name="Settings.Todos.SortManual" xml:space="preserve">
+    <value>Manual order</value>
+  </data>
+  <data name="Settings.Todos.DefaultDue" xml:space="preserve">
+    <value>Default due date</value>
+  </data>
+  <data name="Settings.Todos.DueSoon" xml:space="preserve">
+    <value>Due soon before the deadline</value>
+  </data>
+  <data name="Settings.Todos.Overdue" xml:space="preserve">
+    <value>Overdue after the deadline</value>
+  </data>
+  <data name="Settings.Todos.ShowCompleted" xml:space="preserve">
+    <value>Show completed todos in the popup</value>
+  </data>
+  <data name="Settings.Todos.ConfirmDelete" xml:space="preserve">
+    <value>Ask before deleting a todo</value>
+  </data>
+  <data name="Settings.Popup.Section" xml:space="preserve">
+    <value>Tray popup</value>
+  </data>
+  <data name="Settings.Popup.Hint" xml:space="preserve">
+    <value>How the popup next to the menu bar or tray icon behaves.</value>
+  </data>
+  <data name="Settings.Popup.CloseOnFocusLoss" xml:space="preserve">
+    <value>Close the popup when clicking elsewhere</value>
+  </data>
+  <data name="Settings.Popup.RememberState" xml:space="preserve">
+    <value>Remember selection and filter</value>
+  </data>
+  <data name="Tray.Open" xml:space="preserve">
+    <value>Open todo list</value>
+  </data>
+  <data name="Tray.QuickAdd" xml:space="preserve">
+    <value>Quick add</value>
+  </data>
+  <data name="Tray.Settings" xml:space="preserve">
+    <value>Settings...</value>
+  </data>
+  <data name="Popup.ShortcutHint" xml:space="preserve">
+    <value>{shortcut} quick add</value>
+  </data>
+  <data name="Popup.OpenCount" xml:space="preserve">
+    <value>{count} open</value>
+    <comment>[count: int]</comment>
+  </data>
+  <data name="Hints.Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Hints.Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Hints.ShowCompleted" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Hints.Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Hints.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Hints.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Hints.Keep" xml:space="preserve">
+    <value>Keep</value>
+  </data>
+  <data name="Hints.Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Hints.DueField" xml:space="preserve">
+    <value>Due date</value>
+  </data>
+  <data name="Hints.Suggest" xml:space="preserve">
+    <value>Suggest</value>
+  </data>
+  <data name="Hints.Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="Due.Field.Placeholder" xml:space="preserve">
+    <value>tomorrow 9, fri 18:00, +2h, 20.10.</value>
+  </data>
+  <data name="Due.Field.Invalid" xml:space="preserve">
+    <value>Not a date. Try 18:30, +2h or 2026-10-20 9:00.</value>
+  </data>
+  <data name="Due.Field.None" xml:space="preserve">
+    <value>No due date</value>
+  </data>
+  <data name="Due.Field.Unknown" xml:space="preserve">
+    <value>Unknown date</value>
+  </data>
+  <data name="Due.Field.PickDate" xml:space="preserve">
+    <value>Pick a date</value>
+  </data>
+  <data name="Settings.Duration.None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Settings.Duration.Minutes" xml:space="preserve">
+    <value>{count} min</value>
+    <comment>[count: int]</comment>
+  </data>
+  <data name="Settings.Duration.Hours" xml:space="preserve">
+    <value>{count} h</value>
+    <comment>[count: int]</comment>
+  </data>
+  <data name="Settings.Duration.Days" xml:space="preserve">
+    <value>{count} d</value>
+    <comment>[count: int]</comment>
+  </data>
+  <data name="Settings.Storage.Section" xml:space="preserve">
+    <value>Storage</value>
+  </data>
+  <data name="Settings.Storage.Hint" xml:space="preserve">
+    <value>Pick a synced folder to keep the same todos on several computers. Only one computer should run the plugin against it at a time.</value>
+  </data>
+  <data name="Settings.Storage.Folder" xml:space="preserve">
+    <value>Data folder</value>
+  </data>
+  <data name="Settings.Storage.Choose" xml:space="preserve">
+    <value>Choose…</value>
+  </data>
+  <data name="Settings.Storage.UseDefault" xml:space="preserve">
+    <value>Use default</value>
+  </data>
+  <data name="Settings.Storage.Reveal" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Settings.Storage.PickerTitle" xml:space="preserve">
+    <value>Choose a folder for your todos</value>
+  </data>
+  <data name="Settings.Storage.Existing" xml:space="preserve">
+    <value>This folder already contains todos.</value>
+  </data>
+  <data name="Settings.Storage.UseExisting" xml:space="preserve">
+    <value>Use those</value>
+  </data>
+  <data name="Settings.Storage.Replace" xml:space="preserve">
+    <value>Replace with mine</value>
+  </data>
+  <data name="Settings.Storage.Moved" xml:space="preserve">
+    <value>Moved. The previous file stays where it was as a copy.</value>
+  </data>
+  <data name="Settings.Storage.UsedExisting" xml:space="preserve">
+    <value>Now using the todos from this folder.</value>
+  </data>
+  <data name="Settings.Storage.Failed" xml:space="preserve">
+    <value>The folder could not be used. Check that it exists and is writable.</value>
+  </data>
+</root>

@@ -1,0 +1,35 @@
+<Project>
+
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+        <!-- One version for every Macro Deck package. The release workflow's cli-version must match it. -->
+        <MacroDeckSdkVersion>3.0.0-beta.16</MacroDeckSdkVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="MacroDeck.Localization" Version="$(MacroDeckSdkVersion)" />
+        <PackageVersion Include="MacroDeck.Plugin.Analyzers" Version="$(MacroDeckSdkVersion)" />
+        <PackageVersion Include="MacroDeck.Plugin.Hosting" Version="$(MacroDeckSdkVersion)" />
+        <PackageVersion Include="MacroDeck.Plugin.Serilog" Version="$(MacroDeckSdkVersion)" />
+        <PackageVersion Include="MacroDeck.Plugin.Testing" Version="$(MacroDeckSdkVersion)" />
+        <PackageVersion Include="MacroDeck.Sdk" Version="$(MacroDeckSdkVersion)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="Avalonia" Version="12.1.4" />
+        <PackageVersion Include="Avalonia.Desktop" Version="12.1.4" />
+        <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.4" />
+        <PackageVersion Include="Microsoft.Data.Sqlite" Version="10.0.12" />
+        <!-- Already in the graph through the Macro Deck packages; referenced directly by TodoList.Core. -->
+        <PackageVersion Include="Serilog" Version="4.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
+        <PackageVersion Include="NUnit" Version="4.3.2" />
+        <PackageVersion Include="NUnit.Analyzers" Version="4.7.0" />
+        <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0" />
+    </ItemGroup>
+
+</Project>

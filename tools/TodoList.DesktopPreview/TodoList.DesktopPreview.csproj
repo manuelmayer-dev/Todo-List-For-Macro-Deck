@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Development tool: renders the desktop windows with sample data to PNG files so their design can be
+         reviewed without clicking through the tray. Never part of the plugin package. -->
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <IsPackable>false</IsPackable>
+        <RootNamespace>TodoList.DesktopPreview</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\TodoList.Desktop\TodoList.Desktop.csproj" />
+    </ItemGroup>
+
+</Project>

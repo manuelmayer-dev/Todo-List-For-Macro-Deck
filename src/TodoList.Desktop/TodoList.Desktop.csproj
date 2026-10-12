@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>TodoList.Desktop</RootNamespace>
+        <IsPackable>false</IsPackable>
+        <!-- Function pointers for native callbacks (Carbon hotkeys, the macOS status item, the Win32 window
+             procedure). -->
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <!-- The desktop windows get their text from Macro Deck's localization generator like the plugin does,
+             under their own scope: the catalog is only resolved in this process and never sent to the host. -->
+        <MacroDeckLocalizationScope>plugin:com.suchbyte.todo-list-plugin.desktop</MacroDeckLocalizationScope>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" />
+        <PackageReference Include="Avalonia.Desktop" />
+        <PackageReference Include="Avalonia.Themes.Fluent" />
+        <PackageReference Include="MacroDeck.Localization" />
+        <!-- Build-time only: the source generator that turns Localization/*.resx into DesktopStrings. -->
+        <PackageReference Include="MacroDeck.Plugin.Analyzers" PrivateAssets="all" />
+        <PackageReference Include="Serilog" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\TodoList.Core\TodoList.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="TodoList.Desktop.Tests" />
+        <InternalsVisibleTo Include="TodoList.DesktopPreview" />
+    </ItemGroup>
+
+    <!-- The localization generator compiles the .resx files into code; embedding them as well would only add
+         unused resources and a satellite assembly folder per language to the package. -->
+    <ItemGroup>
+        <EmbeddedResource Remove="Localization/**/*.resx" />
+    </ItemGroup>
+
+</Project>
