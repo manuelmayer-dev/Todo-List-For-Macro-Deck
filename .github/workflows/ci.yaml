@@ -42,6 +42,15 @@ jobs:
       - name: Conformance
         run: macrodeck-plugin test --project src/TodoList.Plugin --required-only
 
+      # The release runs the packed plugin as a managed subject, which a project run is not; only that mode
+      # must stop when Macro Deck shuts it down, so the package is checked the same way here.
+      - name: Build the package
+        run: macrodeck-plugin build --source src/TodoList.Plugin --output ./artifacts
+
+      - name: Conformance of the package
+        shell: bash
+        run: macrodeck-plugin test --artifact ./artifacts/*.macroDeckPlugin --required-only
+
   package:
     name: Pack and validate
     runs-on: ubuntu-latest

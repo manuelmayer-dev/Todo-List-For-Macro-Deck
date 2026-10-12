@@ -1,6 +1,7 @@
 using MacroDeck.Plugin.Hosting;
 using MacroDeck.Plugin.Serilog;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using TodoList.Desktop;
 using TodoList.Plugin.Hosting;
 
@@ -12,6 +13,9 @@ namespace TodoList.Plugin;
 /// </summary>
 internal static class Program
 {
+	// Macro Deck waits ten seconds for a stopping plugin before it kills it.
+	private static readonly TimeSpan StopDeadline = TimeSpan.FromSeconds(8);
+
 	[STAThread]
 	public static int Main(string[] args)
 	{
@@ -22,6 +26,11 @@ internal static class Program
 			.RegisterIntegration<TodoIntegration>();
 		builder.Services.AddTodoList();
 		var plugin = builder.Build();
+
+		// Once the host starts stopping, the process must end even if a native UI resource or a platform
+		// thread holds it; a managed plugin that lingers after Macro Deck's shutdown request is a fault.
+		plugin.Services.GetRequiredService<IHostApplicationLifetime>().ApplicationStopping.Register(() =>
+			_ = Task.Delay(StopDeadline).ContinueWith(_ => Environment.Exit(0), TaskScheduler.Default));
 
 		var pluginTask = Task.Run(() => plugin.RunAsync());
 
@@ -35,6 +44,9 @@ internal static class Program
 
 		// The desktop UI ends with the plugin, or earlier if it could not start; the plugin decides the exit.
 		pluginTask.GetAwaiter().GetResult();
+
+		// Native UI threads must not keep the process alive after the plugin has stopped.
+		Environment.Exit(0);
 		return 0;
 	}
 }

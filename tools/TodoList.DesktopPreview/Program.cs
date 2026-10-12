@@ -46,7 +46,8 @@ internal static class Program
 
 internal sealed class PreviewApp(string output) : Application
 {
-	private const double Scale = 2;
+	// PREVIEW_SCALE renders sharper images, for example 3 for store screenshots.
+	private static readonly double Scale = double.TryParse(Environment.GetEnvironmentVariable("PREVIEW_SCALE"), System.Globalization.CultureInfo.InvariantCulture, out var scale) ? scale : 2;
 
 	public override void Initialize() => TodoList.Desktop.Theme.AppTheme.Apply(this);
 
@@ -112,6 +113,7 @@ internal sealed class PreviewApp(string output) : Application
 			var due = quickAdd.GetVisualDescendants().OfType<DueField>().Single();
 			due.Text = "fri 18:00";
 			due.Focus(Avalonia.Input.NavigationMethod.Tab);
+			due.SelectionStart = due.SelectionEnd = due.CaretIndex = due.Text.Length;
 			await RenderAsync(quickAdd, $"quickadd-typed-{name}");
 			due.Text = "someday";
 			await RenderAsync(quickAdd, $"quickadd-invalid-{name}");
@@ -122,18 +124,33 @@ internal sealed class PreviewApp(string output) : Application
 				SizeToContent = SizeToContent.WidthAndHeight,
 				Content = new Border { Padding = new Thickness(10), Child = DueField.CreateCalendar() },
 			};
-			((Calendar)((Border)calendarHost.Content!).Child!).SelectedDate = DateTime.Today.AddDays(3);
+			// The Friday that "fri 18:00" in the quick-add render means.
+			((Calendar)((Border)calendarHost.Content!).Child!).SelectedDate = DateTime.Today.AddDays(((int)DayOfWeek.Friday - (int)DateTime.Today.DayOfWeek + 7) % 7);
 			await RenderAsync(calendarHost, $"calendar-{name}");
 			calendarHost.Close();
 
 			await RenderDropDownAsync($"dropdown-{name}");
 
-			var settingsWindow = new SettingsWindow(settings, location, new TodoList.Desktop.Hotkeys.HotkeyState(), _ => { }, logger);
+			// Shown as registered, like on a machine where the shortcut works.
+			var hotkeyState = new TodoList.Desktop.Hotkeys.HotkeyState();
+			hotkeyState.Set(TodoList.Desktop.Hotkeys.HotkeyRegistrationResult.Registered);
+			var settingsWindow = new SettingsWindow(settings, location, hotkeyState, _ => { }, logger);
 			await RenderAsync(settingsWindow, $"settings-{name}");
 			settingsWindow.GetVisualDescendants().OfType<Button>().First(b => b.Focusable && b.IsEffectivelyVisible).Focus(Avalonia.Input.NavigationMethod.Tab);
 			await RenderAsync(settingsWindow, $"settings-focus-{name}");
 			((ScrollViewer)settingsWindow.Content!).ScrollToEnd();
 			await RenderAsync(settingsWindow, $"settings-end-{name}");
+
+			// The whole window without its scroll limit, for store screenshots.
+			((ScrollViewer)settingsWindow.Content!).MaxHeight = double.PositiveInfinity;
+			((ScrollViewer)settingsWindow.Content!).ScrollToHome();
+			// A sample folder instead of this run's temporary directory, like the sample todos.
+			var path = settingsWindow.GetVisualDescendants().OfType<TextBlock>().First(t => t.Text == location.CurrentDirectory);
+			path.Text = OperatingSystem.IsMacOS() ? "~/Library/Mobile Documents/com~apple~CloudDocs/Todo List" : @"C:\Users\you\OneDrive\Todo List";
+			await Task.Delay(200);
+			await RenderAsync(settingsWindow, $"settings-full-{name}");
+			var trayHeading = settingsWindow.GetVisualDescendants().OfType<TextBlock>().First(t => t.Text == TodoList.Desktop.Localization.DesktopText.SectionPopup);
+			Console.WriteLine($"settings-full split at {trayHeading.TranslatePoint(default, settingsWindow)!.Value.Y}");
 			settingsWindow.Close();
 		}
 
@@ -143,11 +160,14 @@ internal sealed class PreviewApp(string output) : Application
 	private static async Task SeedAsync(TodoService todos)
 	{
 		var now = DateTimeOffset.UtcNow;
+		// Round local times read like real due dates; only the "in 25 min" one is relative.
+		var today = DateOnly.FromDateTime(DateTime.Now);
+		DateTimeOffset At(int days, int hour) => new DateTimeOffset(today.AddDays(days).ToDateTime(new TimeOnly(hour, 0)), TimeZoneInfo.Local.GetUtcOffset(DateTime.Now));
 		await todos.CreateAsync(new TodoDraft("Send the quarterly report", DueAt: now.AddHours(-3)), CancellationToken.None);
 		await todos.CreateAsync(new TodoDraft("Book dentist appointment", "Ask about the cleaning", now.AddMinutes(25)), CancellationToken.None);
-		await todos.CreateAsync(new TodoDraft("Water the plants", DueAt: now.AddHours(6)), CancellationToken.None);
+		await todos.CreateAsync(new TodoDraft("Water the plants", DueAt: At(1, 18)), CancellationToken.None);
 		await todos.CreateAsync(new TodoDraft("Renew the domain before it expires next month"), CancellationToken.None);
-		await todos.CreateAsync(new TodoDraft("Call the landlord", DueAt: now.AddDays(3)), CancellationToken.None);
+		await todos.CreateAsync(new TodoDraft("Call the landlord", DueAt: At(3, 10)), CancellationToken.None);
 		var done = await todos.CreateAsync(new TodoDraft("Order printer ink"), CancellationToken.None);
 		await todos.CompleteAsync(done.Id, CancellationToken.None);
 	}
