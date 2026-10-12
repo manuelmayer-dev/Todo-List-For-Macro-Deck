@@ -114,6 +114,11 @@ Report the result of this gate with every change: which version of the guideline
   after the first integration initialization (`DesktopStartSignal`, 5 s fallback): starting Avalonia and Skia
   alongside the first session delayed it enough to fail conformance check MDC0603. Extra registrations
   go in `TodoListServiceCollectionExtensions.AddTodoList`.
+- Never call `Environment.Exit` directly; use `ProcessTermination.Exit`/`ExitAfter`. `Environment.Exit`
+  runs ProcessExit handlers first (Microsoft.Data.Sqlite and Avalonia.Win32 register them), and one that
+  blocks keeps the process alive after Macro Deck's 4004 shutdown, which fails conformance check MDC0604
+  intermittently on Windows. `ProcessTermination` runs its deadline on a dedicated thread and kills the
+  process if the orderly exit does not finish within a second.
 - `RegisterIntegration<T>()` is the one door: it also registers the capability handler for every SDK
   interface the integration implements, so you never write a handler for a built-in capability kind. A
   genuinely new kind uses `ICapabilityHandler` + `RegisterCapabilityHandler<T>()`.

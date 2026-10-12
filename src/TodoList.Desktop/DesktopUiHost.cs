@@ -176,7 +176,7 @@ public sealed class DesktopUiHost : IDesktopUi, IDisposable
 			if (_uiRunning)
 			{
 				_logger.Warning("The desktop todo list did not stop in time; exiting");
-				Environment.Exit(0);
+				ProcessTermination.Exit(0);
 			}
 		}, TaskScheduler.Default);
 	}

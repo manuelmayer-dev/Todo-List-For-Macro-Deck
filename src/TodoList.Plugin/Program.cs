@@ -30,7 +30,7 @@ internal static class Program
 		// Once the host starts stopping, the process must end even if a native UI resource or a platform
 		// thread holds it; a managed plugin that lingers after Macro Deck's shutdown request is a fault.
 		plugin.Services.GetRequiredService<IHostApplicationLifetime>().ApplicationStopping.Register(() =>
-			_ = Task.Delay(StopDeadline).ContinueWith(_ => Environment.Exit(0), TaskScheduler.Default));
+			ProcessTermination.ExitAfter(StopDeadline, 0));
 
 		var pluginTask = Task.Run(() => plugin.RunAsync());
 
@@ -46,7 +46,7 @@ internal static class Program
 		pluginTask.GetAwaiter().GetResult();
 
 		// Native UI threads must not keep the process alive after the plugin has stopped.
-		Environment.Exit(0);
+		ProcessTermination.Exit(0);
 		return 0;
 	}
 }
